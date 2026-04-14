@@ -1,12 +1,10 @@
 const gifStages = [
-    "https://media.tenor.com/EBV7OT7ACfwAAAAj/u-u-qua-qua-u-quaa.gif",    // 0 normal
-    "https://media1.tenor.com/m/uDugCXK4vI4AAAAd/chiikawa-hachiware.gif",  // 1 confused
-    "https://media.tenor.com/f_rkpJbH1s8AAAAj/somsom1012.gif",             // 2 pleading
-    "https://media.tenor.com/OGY9zdREsVAAAAAj/somsom1012.gif",             // 3 sad
-    "https://media1.tenor.com/m/WGfra-Y_Ke0AAAAd/chiikawa-sad.gif",       // 4 sadder
-    "https://media.tenor.com/CivArbX7NzQAAAAj/somsom1012.gif",             // 5 devastated
-    "https://media.tenor.com/5_tv1HquZlcAAAAj/chiikawa.gif",               // 6 very devastated
-    "https://media1.tenor.com/m/uDugCXK4vI4AAAAC/chiikawa-hachiware.gif"  // 7 crying runaway
+    "https://media.tenor.com/OI-Xn-5JTcEAAAAj/peach-goma-happy-side-to-side.gif",    // 0 gato normal
+    "https://media1.tenor.com/m/s-4kvwARd0cAAAAC/garfield-sad.gif",  // 1 Garfield chuva
+    "https://media1.tenor.com/m/Hr98vjSz-V8AAAAC/cat-kitty.gif",             // 2 Mais triste
+    "https://media1.tenor.com/m/2Q-YesgvExEAAAAC/cat-d%E1%BB%97i.gif",             // 3 beiço
+    "https://media1.tenor.com/m/HjjiNa3IcAoAAAAC/cute-plenty.gif",       // 4 Beeem triste
+    "https://media1.tenor.com/m/ooUOJAfqWWwAAAAC/joker-eating-popcorn.gif",             // 5 🤡
 ]
 
 const noMessages = [
