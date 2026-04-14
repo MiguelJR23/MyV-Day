@@ -12,12 +12,9 @@ const gifStages = [
 const noMessages = [
     "Não",
     "Você tem certeza?🤔",
-    "Docinho, por favor...🥺",
-    "Se você disser não, eu vou ficar triste...",
+    "Tô ficando triste...🥺",
     "Beeem triste...🥀",
     "Puufavooor???",
-    "Não faça isso comigo...",
-    "Ultima chance...",
     "Você não consegue me pegar mesmo🤡"
 ]
 
@@ -81,7 +78,7 @@ function showTeaseMessage(msg) {
     toast.textContent = msg
     toast.classList.add('show')
     clearTimeout(toast._timer)
-    toast._timer = setTimeout(() => toast.classList.remove('show'), 2500)
+    toast._timer = setTimeout(() => toast.classList.remove('show'), 4000)
 }
 
 function handleNoClick() {
