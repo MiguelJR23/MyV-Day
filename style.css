@@ -27,27 +27,30 @@ body {
     overflow: hidden;
 }
 
-.hearts-bg::before,
-.hearts-bg::after {
-    content: '💕 💗 💖 💝 💓';
+.heart {
     position: absolute;
-    font-size: 1.5rem;
-    opacity: 0.15;
-    animation: floatHearts 12s linear infinite;
-    white-space: nowrap;
-    top: 100%;
-    left: 10%;
+    top: -10px;
+    color: #ff4d6d;
+    font-size: 20px;
+    opacity: 0;
+
+    animation: fall linear forwards;
 }
 
-.hearts-bg::after {
-    animation-delay: 6s;
-    left: 60%;
-    content: '💗 💕 💓 💖 💝';
-}
+@keyframes fall {
+    0% {
+        transform: translateY(0) translateX(0) scale(0.8);
+        opacity: 0;
+    }
 
-@keyframes floatHearts {
-    from { transform: translateY(0); opacity: 0.15; }
-    to { transform: translateY(-110vh); opacity: 0; }
+    10% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(110vh) translateX(30px) scale(1.1);
+        opacity: 0;
+    }
 }
 
 .container {
@@ -70,6 +73,8 @@ h1 {
     0%, 100% { transform: rotate(-1deg); }
     50% { transform: rotate(1deg); }
 }
+
+
 
 .gif-container {
     margin: 20px auto;
