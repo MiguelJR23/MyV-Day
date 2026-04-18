@@ -31,9 +31,3 @@ This repository is a modified version of the original project, with changes such
 
 Original project by Sahil Gogna:  
 https://github.com/SahilGogna/v-day
-
----
-
-## License
-
-Free to use and modify.
