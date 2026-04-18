@@ -178,16 +178,22 @@ h1 {
     transform: scale(1.1);
 }
 
-/* Yes page specific */
 .yes-container h1.yes-title {
     font-size: 2.8rem;
-    animation: bounceTitle 0.6s ease infinite alternate;
+    display: inline-block;
+    animation: bounceTitle 0.8s ease-in-out infinite alternate;
+    transform-origin: center; 
 }
 
-@keyframes bounceTitle {
-    from { transform: translateY(0) rotate(-1deg); }
-    to { transform: translateY(-12px) rotate(1deg); }
+@keyframes bounceTitle {  /* Animação de trepa-trepa */
+    from { 
+        transform: rotate(-3deg); 
+    }
+    to { 
+        transform: rotate(3deg); 
+    }
 }
+
 
 .yes-message {
     font-size: 1.4rem;
