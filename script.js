@@ -33,6 +33,10 @@ const catGif = document.getElementById('cat-gif')
 const yesBtn = document.getElementById('yes-btn')
 const noBtn = document.getElementById('no-btn')
 const music = document.getElementById('bg-music')
+const slider = document.getElementById("volume-slider");
+const heart = document.querySelector(".heart-icon");
+const control = document.getElementById("music-control");
+const container = document.querySelector(".hearts-bg");
 
 // Autoplay: audio starts muted (bypasses browser policy), unmute immediately
 music.muted = true
@@ -139,7 +143,6 @@ function runAway() {
     noBtn.style.zIndex = '50'
 }
 
-const container = document.querySelector(".hearts-bg");
 
 function createHeart() {
     const heart = document.createElement("div");
@@ -161,3 +164,19 @@ function createHeart() {
 }
 
 setInterval(createHeart, 300);
+
+slider.addEventListener("input", () => {
+    const value = slider.value;
+    // volume
+    music.volume = value / 100;
+    // escala do coração (0.5 até 1.5)
+    const scale = 0.5 + (value / 100);
+    heart.style.transform = `scale(${scale})`;
+    // opacidade
+    heart.style.opacity = 0.5 + (value / 200);
+});
+
+document.getElementById("music-toggle").addEventListener("click", () => {
+    control.classList.toggle("active");
+});
+
