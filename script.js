@@ -37,7 +37,6 @@ const slider = document.getElementById("volume-slider");
 const heart = document.querySelector(".heart-icon");
 const control = document.getElementById("music-control");
 const container = document.querySelector(".hearts-bg");
-const control = document.getElementById("music-control");
 const popup = document.getElementById("volume-popup");
 
 // Autoplay: audio starts muted (bypasses browser policy), unmute immediately
@@ -194,3 +193,20 @@ control.addEventListener("mouseleave", () => {
         control.classList.remove("active");
     }, 2500); // tempo que ele continua visível (2.5s)
 });
+
+function showPopup() {
+    clearTimeout(hideTimeout);
+    control.classList.add("active");
+}
+
+function hidePopupWithDelay() {
+    hideTimeout = setTimeout(() => {
+        control.classList.remove("active");
+    }, 2500);
+}
+
+control.addEventListener("mouseenter", showPopup);
+control.addEventListener("mouseleave", hidePopupWithDelay);
+popup.addEventListener("mouseenter", showPopup);
+popup.addEventListener("mouseleave", hidePopupWithDelay);
+slider.addEventListener("input", showPopup);
