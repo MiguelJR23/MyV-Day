@@ -24,7 +24,7 @@ const yesTeasePokes = [
 ]
 
 let yesTeasedCount = 0
-
+let hideTimeout;
 let noClickCount = 0
 let runawayEnabled = false
 let musicPlaying = true
@@ -37,6 +37,8 @@ const slider = document.getElementById("volume-slider");
 const heart = document.querySelector(".heart-icon");
 const control = document.getElementById("music-control");
 const container = document.querySelector(".hearts-bg");
+const control = document.getElementById("music-control");
+const popup = document.getElementById("volume-popup");
 
 // Autoplay: audio starts muted (bypasses browser policy), unmute immediately
 music.muted = true
@@ -180,3 +182,15 @@ document.getElementById("music-toggle").addEventListener("click", () => {
     control.classList.toggle("active");
 });
 
+// quando entra na área do botão
+control.addEventListener("mouseenter", () => {
+    clearTimeout(hideTimeout);
+    control.classList.add("active");
+});
+
+// quando sai da área do botão
+control.addEventListener("mouseleave", () => {
+    hideTimeout = setTimeout(() => {
+        control.classList.remove("active");
+    }, 2500); // tempo que ele continua visível (2.5s)
+});
