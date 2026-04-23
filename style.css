@@ -237,7 +237,7 @@ h1 {
     transition: all 0.3s ease;
 }
 
-#music-control:hover #volume-popup {
+#music-control.active #volume-popup {
     opacity: 1;
     transform: translate(-50%, 0) scale(1);
     pointer-events: auto;
