@@ -132,3 +132,37 @@ control.addEventListener("mouseleave", hidePopupWithDelay);
 popup.addEventListener("mouseenter", showPopup);
 popup.addEventListener("mouseleave", hidePopupWithDelay);
 slider.addEventListener("input", showPopup);
+const heart = document.querySelector(".heart-icon");
+const container = document.querySelector(".hearts-bg");
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+
+    heart.innerText = "(˶˃ ᵕ ˂˶)";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (16 + Math.random() * 20) + "px";
+
+    const duration = 4 + Math.random() * 4;
+    heart.style.animationDuration = duration + "s";
+
+    container.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, duration * 1000);
+}
+
+setInterval(createHeart, 300);
+
+slider.addEventListener("input", () => {
+    const value = slider.value;
+    // volume
+    music.volume = value / 100;
+    // escala do coração (0.5 até 1.5)
+    const scale = 0.5 + (value / 100);
+    heart.style.transform = `scale(${scale})`;
+    // opacidade
+    heart.style.opacity = 0.5 + (value / 200);
+});
