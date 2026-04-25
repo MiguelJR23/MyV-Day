@@ -265,3 +265,71 @@ h1 {
     transform: translateX(-50%) scale(1);
     pointer-events: auto;
 }
+
+/* Responsividade para celular */
+@media (max-width: 600px) { 
+
+    .container {
+        padding: 20px 15px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    #no-btn { /* Tentar não quebrar o botão do não*/
+        max-width: 80%;
+        word-wrap: break-word;
+    }
+
+    #cat-gif {
+        width: 180px;
+    }
+
+    #yes-btn, #no-btn {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+
+    #yes-btn {
+        max-width: 90%;
+    }
+
+    #music-toggle {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+
+    #volume-popup {
+        padding: 10px;
+    }
+
+    #volume-slider {
+        height: 80px;
+    }
+
+    .heart-icon {
+        font-size: 16px;
+    }
+}
+
+/* Responsividade para tablets */
+@media (max-width: 1024px) { 
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    #cat-gif {
+        width: 220px;
+    }
+
+    #yes-btn, #no-btn {
+        font-size: 1.2rem;
+    }
+}
+
+button {
+    touch-action: manipulation;
+}
