@@ -158,12 +158,10 @@ setInterval(createHeart, 300);
 
 slider.addEventListener("input", () => {
     const value = slider.value;
-    // volume
     music.volume = value / 100;
     // escala do coração (0.5 até 1.5)
     const scale = 0.5 + (value / 100);
     heart.style.transform = `scale(${scale})`;
-    // opacidade
     heart.style.opacity = 0.5 + (value / 200);
 });
 
@@ -181,6 +179,6 @@ themeBtn.addEventListener("click", () => {
     const isLight = document.body.classList.contains("light-mode");
     // troca emoji
     themeBtn.textContent = isLight ? "☀️" : "🌙";
-    // salva preferência
+    // salva preferência; Sim, capricho
     localStorage.setItem("theme", isLight ? "light" : "dark");
 });
