@@ -27,6 +27,9 @@ body {
     align-items: center;
     overflow: hidden;
     color: var(--text-color);
+    transition: 
+        background 1.5s ease,
+        color 1.0s ease;
 }
 
 /* Floating hearts background */
@@ -375,4 +378,12 @@ button {
 
 #theme-toggle:hover {
     transform: scale(1.1);
+}
+
+h1, button, .heart, #music-toggle, #theme-toggle {
+    transition: 
+        background 1.5s ease,
+        color 1.5s ease,
+        box-shadow 1.5s ease,
+        transform 1.5s ease;
 }
