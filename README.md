@@ -27,7 +27,8 @@ This repository is a modified version of the original project, with changes such
 - `yes.html` – success page  
 - `script.js` – interactions 
 - `style.css` – design and animations  
-- `music/` – background audio  
+- `music/` – background audio
+- `img/` – images, probabily just the favicon
 
 ---
 
