@@ -4,15 +4,29 @@
     box-sizing: border-box;
 }
 
+:root {  /* Modo escuro */
+    --bg-gradient: radial-gradient(circle at center, #3a0f2a, #12050d, #1a0d2b);
+    --text-color: #ffffff;
+    --primary-color: #ff4d6d;
+    --card-bg: rgba(255, 255, 255, 0.85);
+}
+
+body.light-mode {  /* Modo claro */
+    --bg-gradient: radial-gradient(circle at center, #ffd6e0, #fff0f5, #ffe4ec);
+    --text-color: #2a0f1c;
+    --primary-color: #d63384;
+    --card-bg: rgba(255, 255, 255, 0.9);
+}
+
 body {
-    background-color: #FFE4E8;
+    background: var(--bg-gradient);
     font-family: 'Nunito', sans-serif;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background: radial-gradient(circle at center, #3a0f2a, #12050d, #1a0d2b);
+    color: var(--text-color);
 }
 
 /* Floating hearts background */
@@ -64,6 +78,7 @@ h1 {
     margin-bottom: 20px;
     text-shadow: 2px 2px 0px rgba(214, 51, 132, 0.2);
     animation: wiggle 2s ease-in-out infinite;
+    color: var(--primary-color);
 }
 
 @keyframes wiggle {
@@ -211,6 +226,7 @@ h1 {
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
     transition: transform 0.2s;
+    background: var(--card-bg);
 }
 
 #music-toggle:hover {
