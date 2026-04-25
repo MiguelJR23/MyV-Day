@@ -166,3 +166,21 @@ slider.addEventListener("input", () => {
     // opacidade
     heart.style.opacity = 0.5 + (value / 200);
 });
+
+const themeBtn = document.getElementById("theme-toggle");
+// carregar preferência salva
+if (localStorage.getItem("theme") === "light") {
+    document.body.classList.add("light-mode");
+    themeBtn.textContent = "☀️";
+} else {
+    themeBtn.textContent = "🌙";
+}
+
+themeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+    const isLight = document.body.classList.contains("light-mode");
+    // troca emoji
+    themeBtn.textContent = isLight ? "☀️" : "🌙";
+    // salva preferência
+    localStorage.setItem("theme", isLight ? "light" : "dark");
+});
