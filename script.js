@@ -38,6 +38,7 @@ const heart = document.querySelector(".heart-icon");
 const control = document.getElementById("music-control");
 const container = document.querySelector(".hearts-bg");
 const popup = document.getElementById("volume-popup");
+const themeBtn = document.getElementById("theme-toggle");
 
 // Autoplay: audio starts muted (bypasses browser policy), unmute immediately
 music.muted = true
@@ -210,3 +211,20 @@ control.addEventListener("mouseleave", hidePopupWithDelay);
 popup.addEventListener("mouseenter", showPopup);
 popup.addEventListener("mouseleave", hidePopupWithDelay);
 slider.addEventListener("input", showPopup);
+
+// carregar preferência salva
+if (localStorage.getItem("theme") === "light") {
+    document.body.classList.add("light-mode");
+    themeBtn.textContent = "☀️";
+} else {
+    themeBtn.textContent = "🌙";
+}
+
+themeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+    const isLight = document.body.classList.contains("light-mode");
+    // troca emoji
+    themeBtn.textContent = isLight ? "☀️" : "🌙";
+    // salva preferência
+    localStorage.setItem("theme", isLight ? "light" : "dark");
+});
